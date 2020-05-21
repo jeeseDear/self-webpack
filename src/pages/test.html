@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script> -->
+</head>
+<body>
+  <!-- <canvas id="canvas" width="600" height="460">
+    Oh no! Your browser doesn't support canvas!
+  </canvas>
+  <div class="bounce-splus"></div>
+  <div class="liner"></div> -->
+  <div id="echarts" style="height:800px"></div>
+  <!-- <div class="hello">
+    Your browser doesn't appear to support the HTML51232
+    <button onclick="gotest1()">跳转到test1页面</button>
+    &#128569;
+  </div> -->
+  <script>
+     var canvas = document.getElementById('canvas');
+    var gl = canvas.getContext('experimental-webgl');
+
+    var VSHADER_SOURCE = `
+        attribute vec4 a_Position;
+
+        void main() {
+            gl_Position = a_Position;
+        }
+    `;
+
+    var FSHADER_SOURCE = `
+        precision mediump float;
+
+        void main() {
+            gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
+        }
+    `;
+
+    var vertexShader = gl.createShader(gl.VERTEX_SHADER);
+
+    gl.shaderSource(vertexShader, VSHADER_SOURCE);
+    gl.compileShader(vertexShader);
+
+    var fragmentShader = gl.createShader(gl.FRAGMENT_SHADER);
+
+    gl.shaderSource(fragmentShader, FSHADER_SOURCE);
+    gl.compileShader(fragmentShader);
+
+    var program = gl.createProgram();
+
+    gl.attachShader(program, vertexShader);
+    gl.attachShader(program, fragmentShader);
+
+    gl.linkProgram(program);
+    gl.useProgram(program);
+
+    var vertices = new Float32Array([
+        -0.3,  0.3,  0.0,
+         0.3,  0.3,  0.0,
+        -0.3, -0.3,  0.0,
+         0.3, -0.3,  0.0
+    ]);
+
+    var buffer = gl.createBuffer();
+
+    gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+    gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW);
+
+    var a_Position = gl.getAttribLocation(program, 'a_Position');
+
+    gl.vertexAttribPointer(a_Position, 3, gl.FLOAT, false, 0, 0);
+    gl.enableVertexAttribArray(a_Position);
+
+    gl.clearColor(1.0, 1.0, 1.0, 1.0);
+    gl.clear(gl.COLOR_BUFFER_BIT);
+
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+
+  </script>
+  <style>
+    .bounce-splus {
+      width: 200px;
+      height: 40px;
+      border-radius: 30px;
+      background-color: #000;
+      -webkit-transform-origin: top center;
+      transform-origin: top center;
+      animation: splus .5s ease 1s 2;
+    }
+    @keyframes splus {
+      20% {
+        -webkit-transform: rotate3d(0, 0, 1, 10deg);
+        transform: rotate3d(0, 0, 1, 10deg);
+      }
+
+      40% {
+        -webkit-transform: rotate3d(0, 0, 1, -7deg);
+        transform: rotate3d(0, 0, 1, -7deg);
+      }
+
+      60% {
+        -webkit-transform: rotate3d(0, 0, 1, 4deg);
+        transform: rotate3d(0, 0, 1, 4deg);
+      }
+
+      80% {
+        -webkit-transform: rotate3d(0, 0, 1, -1deg);
+        transform: rotate3d(0, 0, 1, -1deg);
+      }
+
+      to {
+        -webkit-transform: rotate3d(0, 0, 1, 0deg);
+        transform: rotate3d(0, 0, 1, 0deg);
+      }
+    }
+    .liner {
+      margin-top: 30px;
+      height: 10px;
+      border: 1px solid;
+      background: linear-gradient(#0ff, #0ff);
+      background-repeat: no-repeat;
+      background-size: 0;
+      animation: move 2s linear forwards
+    }
+    @keyframes move {
+      100% {
+        background-size: 100%;
+      }
+    }
+  </style>
+</body>
+</html>

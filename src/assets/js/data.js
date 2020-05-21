@@ -1,0 +1,101 @@
+[
+  {conversationId: "7472"
+  userId: "965006065496440503"
+  serviceUserId: "9732"
+  serviceUserNO: "Y0009732"
+  serviceUserName: "张仁兵"
+  name: "999156398712940001"
+  role: 1
+  avatar: null
+  lastImMessageDTO: Array(1)
+  0: {…}
+  length: 1
+  __ob__: Observer {value: Array(1), dep: Dep, vmCount: 0}
+  __proto__: Array
+  unReadMsgNum: 0
+  unReplyTime: 46
+  beginConversationTime: 1582875706000
+  telephone: "156****0001"
+  status: 2
+  endConversationTime: null
+  imMessageStartId: "1000000000000000083"
+  imMessageEndId: null
+  inviteCommentsStatus: 0
+  source: 5
+  evaluateTime: null
+  evaluateResult: -1
+  serviceTicketStatus: -1
+  updateTime: 1582875889989
+  workbenchId: 1
+  workbenchName: "在线工作台"
+  isTransfer: true
+  transferRemark: ""
+  inviteCommentType: null
+  conversationType: 0},
+  {
+    conversationId: "7459"
+userId: "965006065496440503"
+serviceUserId: "9732"
+serviceUserNO: "Y0009732"
+serviceUserName: "张仁兵"
+name: "156****0001"
+role: 1
+avatar: null
+lastImMessageDTO: Array(2)
+unReadMsgNum: 0
+unReplyTime: 0
+beginConversationTime: 1582874723000
+telephone: "156****0001"
+status: 5
+endConversationTime: 1582875003000
+imMessageStartId: "1000000000000000067"
+imMessageEndId: "1000000000000000072"
+inviteCommentsStatus: 1
+source: 5
+evaluateTime: null
+evaluateResult: -1
+serviceTicketStatus: -1
+updateTime: 1582875005000
+workbenchId: 1
+workbenchName: "在线工作台"
+isTransfer: true
+transferRemark: ""
+inviteCommentType: 2
+conversationType: 0
+_telephone: ƒ ()
+_firstInAndUnActive: false
+  },
+  {
+    conversationId: "7271"
+userId: "965006065496440410"
+serviceUserId: "9732"
+serviceUserNO: "Y0009732"
+serviceUserName: "张仁兵"
+name: "151****8454"
+role: 1
+avatar: null
+lastImMessageDTO: Array(2)
+unReadMsgNum: 0
+unReplyTime: 0
+beginConversationTime: 1582771274000
+telephone: "151****8454"
+status: 3
+endConversationTime: null
+imMessageStartId: "1000000000000000422"
+imMessageEndId: "1000000000000000440"
+inviteCommentsStatus: 0
+source: 5
+evaluateTime: null
+evaluateResult: -1
+serviceTicketStatus: -1
+updateTime: 1582774393000
+workbenchId: 1
+workbenchName: "在线工作台"
+isTransfer: true
+transferRemark: "将会话转给任兵描述"
+inviteCommentType: null
+conversationType: 0
+_telephone: ƒ ()
+originNumber: "999151787206788454"
+  }
+]
